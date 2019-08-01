@@ -1,0 +1,75 @@
+<ion-content text-center>
+<ion-card>
+  <ion-card-header>
+    SIGNUP
+  </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+          <ion-item>
+            <ion-label position="floating">Email:</ion-label>
+            <ion-input type="text" [(ngModel)]="register.email"></ion-input>
+          </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Full Name:</ion-label>
+              <ion-input type="text" [(ngModel)]="register.fullname"></ion-input>
+            </ion-item>
+
+            <ion-radio-group>
+                <ion-list-header>
+                  <ion-label>Gender:</ion-label>
+                </ion-list-header>
+            
+                <ion-item  lines="none">
+                  <ion-label >Male</ion-label>
+                  <ion-radio slot="start" [(ngModel)]="register.gender" value="male"></ion-radio>
+                </ion-item>
+
+                <ion-item  lines="none">
+                    <ion-label>Female</ion-label>
+                    <ion-radio slot="start"[(ngModel)]="register.gender" value="female"></ion-radio>
+                </ion-item>
+            </ion-radio-group>   
+
+            <ion-item>
+              <ion-label position="floating">Age:</ion-label>
+              <ion-input type="number" [(ngModel)]="register.age"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Height(cm):</ion-label>
+              <ion-input type="number" [(ngModel)]="register.height"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Weight(kg):</ion-label>
+              <ion-input type="number" [(ngModel)]="register.weight"></ion-input>
+            </ion-item>
+            
+            <ion-item>
+              <ion-label position="floating">Password:</ion-label>
+              <ion-input type="Password" [(ngModel)]="register.password"></ion-input>
+            </ion-item>
+   
+            <ion-item>
+                <p>Already a member? click to <a routerLink="/login">Login</a></p>
+           </ion-item>
+
+           <ion-button fill="solid" expand="block" color="dark" (click)="signup()">Sign Up</ion-button>
+       </ion-list>
+    </ion-card-content>
+  </ion-card>  
+</ion-content> 
+
+    
+
+    
+
+    
+
+    
+
+   
+
+    
+  

@@ -1,0 +1,27 @@
+<ion-content text-center>
+  <br><br><br>
+    <img src="assets/image/logo.png" width="100" height="100">
+    <br><br>
+  <ion-card>
+    <ion-card-header>
+      LOGIN
+    </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+            <ion-item>
+                <ion-label position="floating">Email:</ion-label>
+                <ion-input type="email" [(ngModel)]="user.email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Password:</ion-label>
+                <ion-input type="Password" [(ngModel)]="user.password"></ion-input>
+            </ion-item>
+            <ion-item lines="none">
+                <p>New member? click here to <a routerLink="/register">Register</a></p>
+            </ion-item>
+            <ion-button expand="block" color="primary" block outline (click)="login()">Login</ion-button>
+         </ion-list>
+      </ion-card-content>
+  </ion-card>  
+  
+</ion-content>
