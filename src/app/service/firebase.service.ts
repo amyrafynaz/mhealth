@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { first } from 'rxjs/operators';
-import { AngularFireStorage } from '@angular/fire/storage';
-import { SWITCH_COMPILE_NGMODULE__POST_R3__ } from '@angular/core/src/metadata/ng_module';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +12,12 @@ export class FirebaseService {
     private afauth: AngularFireAuth,
     private afstore: AngularFirestore,
   ) { }
+
+  async getUID(){
+    const user = await this.afauth.authState.pipe(first()).toPromise();
+
+    return user;
+  }
 
   async signup(user){ 
     try{
@@ -51,8 +55,34 @@ export class FirebaseService {
     return await this.afauth.auth.signOut();
   }
 
+  async getUser(){
+    let user = await this.getUID();
+    return await this.afstore.doc("User/" + user.uid).valueChanges();
+
+  }
+
   async getDisease(){
     return await this.afstore.collection("disease").valueChanges();
+  }
+
+  async getDiseaseFoods(id){
+    return await this.afstore.collection("foods", ref =>ref.where("id", "==", id)).valueChanges();
+  }
+
+  async getFav(){
+    let user = await this.getUID();
+    console.log(user.uid);
+    return await this.afstore.collection("fav", ref =>ref.where("uid", "==", user.uid)).snapshotChanges();
+  }
+
+  async addFavorite(details){
+    let user = await this.getUID();
+    details.uid = user.uid; 
+    return await this.afstore.collection('fav').add(details)
+  }
+
+  async delFavorite(fid){
+    return await this.afstore.collection('fav').doc(fid).delete()
   }
 }
 

@@ -4,6 +4,16 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>          
+<ion-content>     
+    <ion-item-group *ngFor="let item of efavyo">
+        <ion-item-divider>
+          <ion-label>{{item.alph}}</ion-label>
+        </ion-item-divider>
+      
+        <ion-item *ngFor="let data of item.data" (click)="go(data)">
+          <ion-icon slot="end" color="medium" name="arrow-round-forward"></ion-icon>
+          <ion-label>{{data.name}}</ion-label>
+        </ion-item>    
+    </ion-item-group>     
 
 </ion-content>

@@ -10,11 +10,13 @@ import { SharedService } from '../service/shared.service';
 })
 export class DiseasesPage implements OnInit {
   arr:any;
+  earr:any;
   constructor(
     private router: Router,
     private fb:FirebaseService,
     private shared:SharedService
     ) {
+      this.earr = [];
       this.arr = this.shared.getAlphArray();
       this.subscribeToDisease();
      }
@@ -23,13 +25,14 @@ export class DiseasesPage implements OnInit {
   }
 
   async subscribeToDisease(){
-    let loading = await this.shared.loading("Fetching Disease Information!");
+    let loading = await this.shared.loading("Fetching Disease List!");
     loading.present();
     console.log("DiseasesPage");
     let d = await this.fb.getDisease();
-    console.log(d);
     d.subscribe(data => {
       if(data.length > 0){
+        this.earr = [];
+        this.arr = this.shared.getAlphArray();
         this.segregate(data,loading);
       }
     }, err => {
@@ -38,7 +41,6 @@ export class DiseasesPage implements OnInit {
   }
 
   segregate(data, loading){
-    console.log(data);
     for(let i = 0; i < this.arr.length; i++){
       for(let j = 0; j < data.length; j++){
         if(this.arr[i].alph.toLowerCase() == data[j].name[0].toLowerCase()){
@@ -50,36 +52,19 @@ export class DiseasesPage implements OnInit {
 
     
     for(let i = 0; i < this.arr.length; i++){
-      if(this.arr[i].data.length < 1){
-        this.arr.splice(i, 1);
+      if(this.arr[i].data.length > 0){
+        this.earr.push(this.arr[i]);
       }
     }
 
-    console.log(this.arr);
+    console.log(this.earr);
     loading.dismiss();
   }
 
-  atherosclerosis(){
+  go(data){
+    console.log(data);
+    this.shared.setDisease(data);
+    this.shared.setFavOrDel(true);
     this.router.navigateByUrl('/info1');
-  }
-
-  coronery(){
-    this.router.navigateByUrl('/info2');
-  }
-
-  heartattack(){
-    this.router.navigateByUrl('/info3');
-  }
-
-  hypertensive(){
-    this.router.navigateByUrl('/info4');
-  }
-
-  stroke(){
-    this.router.navigateByUrl('/typedisease');
-  }
-
-  peripheral(){
-    this.router.navigateByUrl('/info5');
   }
 }

@@ -5,7 +5,8 @@ import {AlertController, LoadingController} from '@ionic/angular';
   providedIn: 'root'
 })
 export class SharedService {
-
+  disease:any;
+  favOrDel:any;
   constructor(
     private alertController: AlertController,
     private loadingController: LoadingController
@@ -27,6 +28,22 @@ export class SharedService {
     });
 
     return loading;
+  }
+
+  setDisease(disease){
+    this.disease = disease;
+  }
+
+  getDisease(){
+    return this.disease;
+  }
+
+  setFavOrDel(favOrDel){
+    this.favOrDel = favOrDel;
+  }
+
+  getFavOrDel(){
+    return this.favOrDel;
   }
 
   getAlphArray(){

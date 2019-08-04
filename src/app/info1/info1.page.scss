@@ -4,11 +4,11 @@ $color : #3880ff;
 }
 
 .base{
-    color: $color;
-    border: 1px solid $color;
-    background: white;
+    color: #3880ff !important;
+    // border: 1px solid #3880ff !important;
+    // background: white;
 }
 .active{
-    color:white;
-    background: $color;
+    color:white !important;
+    background: #3880ff !important;
 }
