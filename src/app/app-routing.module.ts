@@ -13,6 +13,11 @@ const routes: Routes = [
   { path: 'diseases', loadChildren: './diseases/diseases.module#DiseasesPageModule' },
   { path: 'typedisease', loadChildren: './typedisease/typedisease.module#TypediseasePageModule' },
   { path: 'typefood', loadChildren: './typefood/typefood.module#TypefoodPageModule' },
+  { path: 'info1', loadChildren: './info1/info1.module#Info1PageModule' },
+  { path: 'info2', loadChildren: './info2/info2.module#Info2PageModule' },
+  { path: 'info3', loadChildren: './info3/info3.module#Info3PageModule' },
+  { path: 'info4', loadChildren: './info4/info4.module#Info4PageModule' },
+  { path: 'info5', loadChildren: './info5/info5.module#Info5PageModule' },
 ];
 
 @NgModule({

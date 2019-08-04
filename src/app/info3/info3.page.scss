@@ -1,0 +1,14 @@
+$color : #3880ff;
+.ribbon{
+    border-radius:5px;
+}
+
+.base{
+    color: $color;
+    border: 1px solid $color;
+    background: white;
+}
+.active{
+    color:white;
+    background: $color;
+}

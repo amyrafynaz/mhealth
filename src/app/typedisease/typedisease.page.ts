@@ -13,6 +13,10 @@ export class TypediseasePage implements OnInit {
   ngOnInit() {
   }
 
+  segmentChanged(ev: any) {
+    console.log('Segment changed', ev);
+  }
+
   gofood(){
     this.router.navigateByUrl('/typefood');
   }

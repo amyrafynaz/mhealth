@@ -46,5 +46,13 @@ export class FirebaseService {
       };
     }
   }
+
+  async logout(){
+    return await this.afauth.auth.signOut();
+  }
+
+  async getDisease(){
+    return await this.afstore.collection("disease").valueChanges();
+  }
 }
 

@@ -28,4 +28,35 @@ export class SharedService {
 
     return loading;
   }
+
+  getAlphArray(){
+    return [
+      {alph: "A", data: []},
+      {alph: "B", data: []},
+      {alph: "C", data: []},
+      {alph: "D", data: []},
+      {alph: "E", data: []},
+      {alph: "F", data: []},
+      {alph: "G", data: []},
+      {alph: "H", data: []},
+      {alph: "I", data: []},
+      {alph: "J", data: []},
+      {alph: "K", data: []},
+      {alph: "L", data: []},
+      {alph: "M", data: []},
+      {alph: "N", data: []},
+      {alph: "O", data: []},
+      {alph: "P", data: []},
+      {alph: "Q", data: []},
+      {alph: "R", data: []},
+      {alph: "S", data: []},
+      {alph: "T", data: []},
+      {alph: "U", data: []},
+      {alph: "V", data: []},
+      {alph: "W", data: []},
+      {alph: "X", data: []},
+      {alph: "Y", data: []},
+      {alph: "Z", data: []},
+    ];
+  }
 }

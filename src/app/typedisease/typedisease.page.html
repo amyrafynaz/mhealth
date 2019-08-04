@@ -3,31 +3,41 @@
     <ion-buttons slot="start" defaultHref="tab/disease">
     <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Disease Type</ion-title>
+    <ion-title>Stroke</ion-title>
   </ion-toolbar>
-  
 </ion-header>
 
 <ion-content>
-    <ion-grid class="ribbon" text-center>
+    <ion-grid class="ribbon" color="secondary" text-center>
         <ion-row>
           <ion-col class="base active">
             Information
           </ion-col>
           <ion-col class="base">
-            Food
+            Foods
           </ion-col>
         </ion-row>
     </ion-grid>
 
+    <!-- Default Segment -->
+<!--ion-segment (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="friends">
+      <ion-label>Information</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="enemies">
+      <ion-label>Foods</ion-label>
+    </ion-segment-button>
+  </ion-segment-->
+  
+
     <ion-slides pager="true">
         <ion-slide>
             <ion-card class="welcome-card">
-                <img src="/assets/image/homepic.png" alt="" />
+                <img src="/assets/image/stroke.png" alt="" />
                 <!--ion-card-header>
                   <ion-card-title>Welcome</ion-card-title>
                 </ion-card-header-->
-                <ion-card-content>
+                <ion-card-content text-justify>
                     <p>Strokes are caused by disruption of the blood supply to the
                         brain. This may result from either blockage (ischaemic
                         stroke) or rupture of a blood vessel (haemorrhagic stroke).
@@ -48,38 +58,37 @@
                           <img src="/assets/image/oat.jpg" alt="" />
                           <ion-card-content>
                             <p>Berry Berry Chocolate Chip and Oatmeal Sundae</p>
+                            <p><b>Per Serving: 135 calories</b></p>
                           </ion-card-content>
                       </ion-card>
                   </ion-col>
         
                   <ion-col>
                     <ion-card>
-                      <img src="/assets/image/oat2.jpg" alt="" />
+                      <img src="/assets/image/asparagus.jpg" alt="" />
                       <ion-card-content>
-                        <p>Tropical Fruit Oatmeal Bowl</p>
-                        <p><b>130 calories</b></p>
+                        <p>Gruyere, Asparagus & Pea Baked Pasta</p>
+                        <p><b>Per Serving: 489 calories</b></p>
                       </ion-card-content>
                     </ion-card>
                   </ion-col>
         
                   <ion-col>
                       <ion-card>
-                        <img src="/assets/image/homepic.png" alt="" />
+                        <img src="/assets/image/skillet.jpg" alt="" />
                         <ion-card-content>
-                          <p>Disease</p>
-                          <p>Age</p>
-                          <p>Weight</p>
+                        <p>Skillet Gnocchi with Chard & White Beans</p>
+                        <p><b>Per serving: 326 calories</b></p>
                         </ion-card-content>
                       </ion-card>
                     </ion-col>
         
                     <ion-col>
                         <ion-card>
-                          <img src="/assets/image/homepic.png" alt="" />
+                          <img src="/assets/image/tuna.jpg" alt="" />
                            <ion-card-content>
-                            <p>Disease</p>
-                            <p>Age</p>
-                            <p>Weight</p>
+                            <p>Turkish Seared Tuna with Bulgur & Chickpea Salad</p>
+                            <p><b>Per serving: 459 calories</b></p>
                           </ion-card-content>
                         </ion-card>
                       </ion-col>

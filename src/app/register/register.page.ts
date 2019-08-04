@@ -42,6 +42,7 @@ export class RegisterPage implements OnInit {
   async signup() {
     let loading = await this.sharedservice.loading("creating your account");
     loading.present(); 
+    console.log(this.register);
     const signup = await this.fb.signup(this.register);
     if(signup.success){
       this.init();

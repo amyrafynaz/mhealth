@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Health</ion-title>
+    <ion-title>Disease</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -16,17 +16,23 @@
 
   <ion-item-group>
       <ion-item-divider>
+        <ion-label>A</ion-label>
+      </ion-item-divider>
+    
+      <ion-item (click)="atherosclerosis()">
+        <ion-icon slot="end" color="medium" name="arrow-round-forward"></ion-icon>
+        <ion-label>Atherosclerosis</ion-label>
+      </ion-item>    
+  </ion-item-group>
+
+  <ion-item-group>
+      <ion-item-divider>
         <ion-label>C</ion-label>
       </ion-item-divider>
     
-      <ion-item (click)="go()">
+      <ion-item (click)="coronery()">
         <ion-icon slot="end" color="medium" name="arrow-round-forward"></ion-icon>
-        <ion-label>Cardiovascular Disease</ion-label>
-      </ion-item>
-
-      <ion-item>
-        <ion-icon slot="end" color="medium" name="arrow-round-forward"></ion-icon>
-        <ion-label>Coronery Heart Disease</ion-label>
+        <ion-label>Coronery Artery Disease</ion-label>
       </ion-item>
   </ion-item-group>
 
@@ -35,20 +41,36 @@
         <ion-label>H</ion-label>
       </ion-item-divider>
     
-      <ion-item>
+      <ion-item (click)="heartattack()">
+          <ion-icon slot="end" color="medium" name="arrow-round-forward"></ion-icon>
+          <ion-label>Heart Attack</ion-label>
+        </ion-item>
+
+      <ion-item (click)="hypertensive()">
         <ion-icon slot="end" color="medium" name="arrow-round-forward"></ion-icon>
-        <ion-label>Hypertensive Heart disease</ion-label>
-      </ion-item>
-  </ion-item-group>
+        <ion-label>Hypertensive Heart Disease</ion-label>
+      </ion-item>      
+</ion-item-group>
+
+<ion-item-group>
+  <ion-item-divider>
+    <ion-label>P</ion-label>
+  </ion-item-divider>
+
+  <ion-item (click)="peripheral()">
+    <ion-icon slot="end" color="medium" name="arrow-round-forward"></ion-icon>
+    <ion-label> Peripheral Artery Disease</ion-label>
+  </ion-item>
+</ion-item-group>
 
   <ion-item-group>
       <ion-item-divider>
         <ion-label>S</ion-label>
       </ion-item-divider>
     
-      <ion-item>
+      <ion-item (click)="stroke()">
         <ion-icon slot="end" color="medium" name="arrow-round-forward"></ion-icon>
-        <ion-label>Stroke</ion-label>
+        <ion-label>Stroke (Cerebrovascular Disease)</ion-label>
       </ion-item>
   </ion-item-group>
 
